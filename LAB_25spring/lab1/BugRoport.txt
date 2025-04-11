@@ -1,0 +1,8 @@
+const std::string id;
+    // TODO: fix error
+    //const 成员变量应当在初始化列表中初始化
+    StudentWrapper(const Student &student,const std::string &id)
+    : student(student),id(id) { }  // 使用初始化列表
+
+在原始代码中，在构造函数内部对常量成员变量进行了赋值；
+应当在初始化列表中对常量成员变量进行初始化

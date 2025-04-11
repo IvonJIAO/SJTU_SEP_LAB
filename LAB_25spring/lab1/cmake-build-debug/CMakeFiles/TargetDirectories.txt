@@ -1,0 +1,4 @@
+C:/SEP_file/LAB/lab1/cmake-build-debug/CMakeFiles/lab1lib.dir
+C:/SEP_file/LAB/lab1/cmake-build-debug/CMakeFiles/lab1.dir
+C:/SEP_file/LAB/lab1/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/SEP_file/LAB/lab1/cmake-build-debug/CMakeFiles/rebuild_cache.dir

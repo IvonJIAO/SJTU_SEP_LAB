@@ -1,0 +1,15 @@
+1、uint8_t 是一个 无符号 8 位整数类型
+2、使用了c++新特性
+    （1）给函数标记 [[nodiscard]] 之后，如果调用函数但是忘记使用其返回值，编译器会警告或者报错
+    （2）表示一个可能为空的 T 类型的值。使用 std::nullopt 可以构造一个空值
+            eg. std::optional<int> get(int index) {
+               if (index < 0 || index >= 8) { // 下标越界
+               // 返回 -1 是不安全的，因为 values 里面可能有这个值
+               return std::nullopt; // 返回空值
+               }
+               return values[index]; // 返回正常值
+               }
+
+     (3)、std::array 是一个固定大小的数组容器，类似于 C 语言中的数组，但提供了更多的功能和安全性
+    (4)std::format 输出格式 类似python
+

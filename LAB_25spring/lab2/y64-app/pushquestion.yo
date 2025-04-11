@@ -1,0 +1,10 @@
+                                     |  	# Assembly Code to test semantics of pushq
+0x000: 30 f4 00 01 00 00 00 00 00 00 |  	irmovq $0x100, %rsp
+0x00a: a0 4f                         |  	pushq %rsp  # Ambiguous
+0x00c: b0 0f                         |  	popq  %rax
+0x00e: 00                            |  	halt
+
+程序执行过程：
+irmovq $0x100, %rsp：将立即数0x100移动到栈指针寄存器%rsp。
+pushq %rsp：将栈指针寄存器%rsp的值压入栈中，并更新%rsp。此时，%rsp的值从0x100变为0xF8，栈中存储的值为0x100。
+popq %rax：从栈中弹出值到寄存器%rax。此时，%rax的值为0x100，%rsp的值恢复为0x100。
