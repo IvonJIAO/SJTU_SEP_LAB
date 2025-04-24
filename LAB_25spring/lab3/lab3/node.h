@@ -8,9 +8,9 @@ struct Node {
     T val;
     UniquePtr<Node> next;
 
-    Node() : next(nullptr) { }
+    Node() : next(nullptr) { }///缺省构造是next的nullptr构造
 
-    explicit Node(T t) : val(t), next(nullptr) { }
+    explicit Node(T t) : val(t), next(nullptr) { }///显式构造
 };
 
 #endif

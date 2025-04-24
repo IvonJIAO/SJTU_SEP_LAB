@@ -1,2 +1,8 @@
 # ninja log v6
 3	506	7669451251044975	CMakeFiles/lab3.dir/hanoi.cpp.obj	2ab719e0e170b078
+12	614	7671827114472869	CMakeFiles/lab3.dir/hanoi.cpp.obj	2ab719e0e170b078
+10	543	7671832822117643	CMakeFiles/lab3.dir/hanoi.cpp.obj	2ab719e0e170b078
+20	510	7671847863875284	CMakeFiles/lab3.dir/rod.cpp.obj	cc4c340b541c301f
+9	546	7671847863772292	CMakeFiles/lab3.dir/hanoi.cpp.obj	2ab719e0e170b078
+16	653	7671847863832261	CMakeFiles/lab3.dir/board.cpp.obj	e1d8201082cd8130
+653	827	7671847870203942	lab3.exe	69878f9672ecf125

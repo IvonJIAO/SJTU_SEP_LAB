@@ -5,10 +5,14 @@
 // NOTE: DON'T modify this file
 
 #include <utility>
+//？提供了std::move用于转移指针
 
 template <typename T>
 class UniquePtr {
 public:
+    //？nonexcept：表示函数不会抛出异常
+
+    //？隐式和显式构造函数
     UniquePtr() noexcept : pointer(nullptr) { }
     explicit UniquePtr(T *raw) noexcept : pointer(raw) { }
 

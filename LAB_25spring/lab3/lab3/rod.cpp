@@ -6,14 +6,23 @@
 Rod::Rod(const int capacity, const int id) : capacity(capacity), id(id) { }
 
 bool Rod::push(const Disk d) {
-    stack.push(d);
+    if (stack.size()<capacity)
+        {
+        stack.push(d);
+        return true;
+    }
+    else {
+        std::cout<<"Stack is full";
+        return false;
+    }
+
 }
 
 const Disk & Rod::top()
 {
     if (stack.empty())
     {
-        std::cout<<"Stack is empty";
+        throw std::runtime_error("Rod is empty");
         //？其实应该不会有 该逻辑应该在代码中
     }
     else
@@ -80,7 +89,7 @@ void Rod::draw(Canvas &canvas)
 
     // 将盘子从原栈移到临时栈
     while (!Rod::empty()) {
-        tempStack.push(Rod::top());
+        tempStack.push(std::move(Rod::top()));
         Rod::pop();
     }
 
@@ -88,7 +97,7 @@ void Rod::draw(Canvas &canvas)
     while (!tempStack.empty()) {
         const Disk &d = tempStack.top();
         d.draw(canvas, Rod::size(), id); // 层数是当前栈的高度
-        stack.push(d); // 恢复到原栈
+        stack.push(std::move(d)); // 恢复到原栈
         tempStack.pop();
     }
 }
@@ -117,5 +126,5 @@ std::string Rod::toString() {
                 for (int j = 30; j <=41 ; j++)
                     result += tempcanvas.buffer[i][j];
     }
-
+    return result;
 }
