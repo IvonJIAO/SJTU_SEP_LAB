@@ -14,6 +14,8 @@ class Queue {
 
     // Question: why we use raw pointer for tail?
     Node<T> *tail;
+    //? 每个Node有且仅有一个Uniqueptr，但我们需要记录tail的地址以便于插入
+    //? 所以我们使用原始指针来记录tail的地址
 
 public:
     Queue() : sz(0), head(nullptr), tail(nullptr) { }

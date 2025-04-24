@@ -7,6 +7,7 @@ class Canvas {
 public:
     constexpr static int HEIGHT = 11;
     constexpr static int WIDTH = 41;
+    //？固定大小的画布
 
     char buffer[HEIGHT][WIDTH];
 
