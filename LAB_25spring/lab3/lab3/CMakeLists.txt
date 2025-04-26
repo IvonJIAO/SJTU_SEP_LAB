@@ -12,17 +12,9 @@ add_executable(lab3 hanoi.cpp board.cpp board.h canvas.h disk.h node.h queue.h r
         rod.cpp
 )
 
-include(FetchContent)
-FetchContent_Declare(
-        googletest
-        # 指定googletest的仓库URL
-        GIT_REPOSITORY https://github.com/google/googletest.git
-        # 你可以指定一个特定的提交、分支或标签
-        GIT_TAG v1.14.x
-)
-# For Windows: Prevent overriding the parent project's compiler/linker settings
+add_subdirectory(googletest)
+
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
-FetchContent_MakeAvailable(googletest)
 
 include(GoogleTest)
 enable_testing()

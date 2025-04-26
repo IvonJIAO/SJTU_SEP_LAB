@@ -5,29 +5,24 @@
     <option name="tags">
       <list>
         <CustomTag>
-          <option name="bold" value="true" />
           <option name="color" value="#FF2D00" />
-          <option name="hasUnderline" value="true" />
-          <option name="type" value="！" />
+          <option name="type" value="!" />
         </CustomTag>
         <CustomTag>
-          <option name="bold" value="true" />
           <option name="color" value="#3498DB" />
-          <option name="type" value="？" />
+          <option name="type" value="?" />
         </CustomTag>
         <CustomTag>
-          <option name="bold" value="true" />
-          <option name="color" value="#6E976E" />
-          <option name="type" value="/" />
+          <option name="color" value="#474747" />
+          <option name="hasStrikethrough" value="true" />
+          <option name="type" value="//" />
         </CustomTag>
         <CustomTag>
-          <option name="bold" value="true" />
           <option name="color" value="#FF8C00" />
-          <option name="type" value="TODO" />
+          <option name="type" value="todo" />
         </CustomTag>
         <CustomTag>
-          <option name="bold" value="true" />
-          <option name="color" value="#9999FF" />
+          <option name="color" value="#98C379" />
           <option name="type" value="*" />
         </CustomTag>
       </list>
