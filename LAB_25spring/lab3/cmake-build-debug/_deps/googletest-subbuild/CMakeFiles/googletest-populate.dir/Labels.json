@@ -2,37 +2,37 @@
 	"sources" : 
 	[
 		{
-			"file" : "C:/Users/20811/Desktop/lab3 (1)/cmake-build-debug/_deps/googletest-subbuild/CMakeFiles/googletest-populate"
+			"file" : "C:/SEP_file/SJTU_SEP_LAB/LAB_25spring/lab3/cmake-build-debug/_deps/googletest-subbuild/CMakeFiles/googletest-populate"
 		},
 		{
-			"file" : "C:/Users/20811/Desktop/lab3 (1)/cmake-build-debug/_deps/googletest-subbuild/CMakeFiles/googletest-populate.rule"
+			"file" : "C:/SEP_file/SJTU_SEP_LAB/LAB_25spring/lab3/cmake-build-debug/_deps/googletest-subbuild/CMakeFiles/googletest-populate.rule"
 		},
 		{
-			"file" : "C:/Users/20811/Desktop/lab3 (1)/cmake-build-debug/_deps/googletest-subbuild/CMakeFiles/googletest-populate-complete.rule"
+			"file" : "C:/SEP_file/SJTU_SEP_LAB/LAB_25spring/lab3/cmake-build-debug/_deps/googletest-subbuild/CMakeFiles/googletest-populate-complete.rule"
 		},
 		{
-			"file" : "C:/Users/20811/Desktop/lab3 (1)/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-build.rule"
+			"file" : "C:/SEP_file/SJTU_SEP_LAB/LAB_25spring/lab3/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-build.rule"
 		},
 		{
-			"file" : "C:/Users/20811/Desktop/lab3 (1)/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-configure.rule"
+			"file" : "C:/SEP_file/SJTU_SEP_LAB/LAB_25spring/lab3/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-configure.rule"
 		},
 		{
-			"file" : "C:/Users/20811/Desktop/lab3 (1)/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-download.rule"
+			"file" : "C:/SEP_file/SJTU_SEP_LAB/LAB_25spring/lab3/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-download.rule"
 		},
 		{
-			"file" : "C:/Users/20811/Desktop/lab3 (1)/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-install.rule"
+			"file" : "C:/SEP_file/SJTU_SEP_LAB/LAB_25spring/lab3/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-install.rule"
 		},
 		{
-			"file" : "C:/Users/20811/Desktop/lab3 (1)/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-mkdir.rule"
+			"file" : "C:/SEP_file/SJTU_SEP_LAB/LAB_25spring/lab3/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-mkdir.rule"
 		},
 		{
-			"file" : "C:/Users/20811/Desktop/lab3 (1)/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-patch.rule"
+			"file" : "C:/SEP_file/SJTU_SEP_LAB/LAB_25spring/lab3/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-patch.rule"
 		},
 		{
-			"file" : "C:/Users/20811/Desktop/lab3 (1)/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-test.rule"
+			"file" : "C:/SEP_file/SJTU_SEP_LAB/LAB_25spring/lab3/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-test.rule"
 		},
 		{
-			"file" : "C:/Users/20811/Desktop/lab3 (1)/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-update.rule"
+			"file" : "C:/SEP_file/SJTU_SEP_LAB/LAB_25spring/lab3/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-update.rule"
 		}
 	],
 	"target" : 

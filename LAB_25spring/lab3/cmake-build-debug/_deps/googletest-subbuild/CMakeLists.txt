@@ -28,8 +28,8 @@ set_property(GLOBAL PROPERTY _CMAKE_FindGit_GIT_EXECUTABLE_VERSION
 include(ExternalProject)
 ExternalProject_Add(googletest-populate
                      "UPDATE_DISCONNECTED" "False" "GIT_REPOSITORY" "https://github.com/google/googletest.git" "EXTERNALPROJECT_INTERNAL_ARGUMENT_SEPARATOR" "GIT_TAG" "v1.14.x"
-                    SOURCE_DIR          "C:/Users/20811/Desktop/lab3 (1)/cmake-build-debug/_deps/googletest-src"
-                    BINARY_DIR          "C:/Users/20811/Desktop/lab3 (1)/cmake-build-debug/_deps/googletest-build"
+                    SOURCE_DIR          "C:/SEP_file/SJTU_SEP_LAB/LAB_25spring/lab3/cmake-build-debug/_deps/googletest-src"
+                    BINARY_DIR          "C:/SEP_file/SJTU_SEP_LAB/LAB_25spring/lab3/cmake-build-debug/_deps/googletest-build"
                     CONFIGURE_COMMAND   ""
                     BUILD_COMMAND       ""
                     INSTALL_COMMAND     ""
