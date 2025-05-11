@@ -1,5 +1,5 @@
 #include <stdexcept>
-
+#include<cassert>
 #include "TreeNode.h"
 
 TreeNode::TreeNode(initializer_list<double> coords) {
@@ -8,20 +8,22 @@ TreeNode::TreeNode(initializer_list<double> coords) {
   for (double coord : coords) {
     coordinates.push_back(coord);
   }
+  assert(coordinates.size() == 2);
+  left = nullptr;
+  right = nullptr;
 }
 
 const double &TreeNode::operator[](int index) const {
-  // TODO
-  if (index < 0 || index >= coordinates.size())
-    throw std::out_of_range("Index out of range");
+  assert(index >= 0 && index < coordinates.size());
   return coordinates[index];
 }
 
+
 int TreeNode::dimension() const {
-  // TODO
-  if (coordinates.empty())
-  return 0;
-  else return coordinates.size();
+  // !here we don't need to check if coordinates is empty
+  //! because we have already checked it in the constructor
+  //assert (coordinates.empty());
+  return coordinates.size();
 }
 
 const vector<double> &TreeNode::getCoordinates() const {

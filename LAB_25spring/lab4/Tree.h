@@ -31,6 +31,8 @@ private:
 
   void makeEmpty(TreeNode*&node);
 
+  TreeNode * buildTreeRecursive(std::vector<TreeNode *> &nodes, int depth);
+
 
 
 public:
@@ -49,4 +51,6 @@ public:
   void setDistanceCalculator(DistanceCalculator *calculator);
 
   void insert(TreeNode &node);
+
+  void buildTree(std::vector<TreeNode *> &nodes);
 };

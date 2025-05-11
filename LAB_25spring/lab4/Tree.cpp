@@ -67,19 +67,23 @@ istream &operator>>(istream &in, TwoDimenTree &tree) {
     throw runtime_error("Unsupported distance type: " + distanceType);
   }
 
-  // Step 2: 读取树中的节点数量
+  // Step 2: read the number of nodes
   in >> nodeCount;
+  // Step 3: read the nodes into a vector
+  std::vector<TreeNode *> nodes;
   for (int i = 0; i < nodeCount; ++i) {
     double x, y;
     in >> x >> y;
-    TreeNode *node = new TreeNode({x, y});
-    tree.insert(*node); // 假设 TwoDimenTree 有插入节点的方法
+    nodes.push_back(new TreeNode({x, y}));
   }
+
+  // Step 4: build the tree using a balanced approach
+  tree.buildTree(nodes);
 
   return in;
 }
 
-
+/*
 void TwoDimenTree::nearestSearch(TreeNode *cur,
                                   const TreeNode &target,
                                   int depth,
@@ -99,8 +103,8 @@ void TwoDimenTree::nearestSearch(TreeNode *cur,
 
   // Tie-breaker: compare coordinates in lexicographical order
   if (isEqual(curDist, bestDist)) {
-    if (isLessThan((*guess)[0], (*cur)[0]) ||
-        (isEqual((*guess)[0], (*cur)[0]) && isLessThan((*guess)[1], (*cur)[1]))) {
+    if (isLessThan( (*cur)[0],(*guess)[0]) ||
+        (isEqual((*guess)[0], (*cur)[0]) && isLessThan((*cur)[1],(*guess)[1]))) {
       guess = cur;
         }
   }
@@ -116,19 +120,64 @@ void TwoDimenTree::nearestSearch(TreeNode *cur,
     nearestSearch(cur->right, target, depth + 1, guess, bestDist);
   }
 
-  // Check if the other subtree could contain a closer point
-  double verticalDist = abs((*cur)[axis] - target[axis]);
+  //!Check if the other subtree could contain a closer point
+  double verticalDist = calculator->calculateVerticalDistance(*cur, target, axis);
   if (isLessThan(verticalDist, bestDist)) {
     if (cmp(&target, cur)) {
       nearestSearch(cur->right, target, depth + 1, guess, bestDist);
-    } else {
+    }
+    else {
       nearestSearch(cur->left, target, depth + 1, guess, bestDist);
     }
   }
 }
+*/
+
+void TwoDimenTree::nearestSearch(TreeNode *cur,
+                                  const TreeNode &target,
+                                  int depth,
+                                  TreeNode *&guess,
+                                  double &bestDist) {
+  if (cur == nullptr) {
+    return;  // Base case: reached a leaf node or the tree is empty
+  }
+
+  // Calculate the distance between the current node and the target
+  double curDist = calculator->calculateDistance(*cur, target);
+
+  // Update the best guess if the current node is closer
+  if (isLessThan(curDist, bestDist)) {
+    bestDist = curDist;
+    guess = cur;
+  }
+
+  // Tie-breaking: choose the lexicographically smaller node if distances are equal
+  if (isEqual(curDist, bestDist)) {
+    if (isLessThan((*cur)[0], (*guess)[0]) ||
+        (isEqual((*cur)[0], (*guess)[0]) && isLessThan((*cur)[1], (*guess)[1]))) {
+      guess = cur;
+        }
+  }
+
+  // Determine the current axis (alternates between 0 and 1 for 2D)
+  int axis = depth % 2;
+  DimComparator cmp(axis);
+
+  // Recursively search the subtree that is more likely to contain the nearest neighbor
+  TreeNode *primarySubtree = cmp(&target, cur) ? cur->left : cur->right;
+  TreeNode *secondarySubtree = cmp(&target, cur) ? cur->right : cur->left;
+
+  nearestSearch(primarySubtree, target, depth + 1, guess, bestDist);
+
+  // Check if the other subtree could contain a closer point
+  double verticalDist = calculator->calculateVerticalDistance(*cur, target, axis);
+  if (isLessThanOrEqual(verticalDist, bestDist)) {
+    nearestSearch(secondarySubtree, target, depth + 1, guess, bestDist);
+  }
+}
 
 
-//!added function
+//!added functions
 void TwoDimenTree::setDistanceCalculator(DistanceCalculator *NewCreate_calculator) {
   this->calculator = NewCreate_calculator;
 }
@@ -165,4 +214,36 @@ void TwoDimenTree::makeEmpty(TreeNode*&node) {
   makeEmpty(node->right);
   delete node;
   node = nullptr;
+}
+
+
+void TwoDimenTree::buildTree(std::vector<TreeNode *> &nodes) {
+  root = buildTreeRecursive(nodes, 0);
+}
+
+TreeNode *TwoDimenTree::buildTreeRecursive(std::vector<TreeNode *> &nodes, int depth) {
+  if (nodes.empty()) {
+    return nullptr;
+  }
+
+  // Determine the current axis
+  int axis = depth % 2;
+  DimComparator cmp(axis);
+
+  // Sort nodes by the current axis
+  std::sort(nodes.begin(), nodes.end(), cmp);
+
+  // Find the median
+  size_t medianIndex = nodes.size() / 2;
+  TreeNode *medianNode = nodes[medianIndex];
+
+  // Split the nodes into left and right subtrees
+  std::vector<TreeNode *> leftNodes(nodes.begin(), nodes.begin() + medianIndex);
+  std::vector<TreeNode *> rightNodes(nodes.begin() + medianIndex + 1, nodes.end());
+
+  // Recursively build the left and right subtrees
+  medianNode->left = buildTreeRecursive(leftNodes, depth + 1);
+  medianNode->right = buildTreeRecursive(rightNodes, depth + 1);
+
+  return medianNode;
 }
